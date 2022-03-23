@@ -22,7 +22,7 @@ const Todo = () => {
 
     const eventCreateTodo = (todo) => {
         setTodos(getTodos.concat(todo))
-        console.log(getTodos)
+        // console.log(getTodos)
     }
 
     return (

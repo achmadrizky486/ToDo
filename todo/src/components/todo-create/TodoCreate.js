@@ -5,9 +5,9 @@ const TodoCreate = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         // -------------------------------------
-
         const newTodo = {
-            id: Math.floor(Math.random() * 100) + 1,
+            // id: Math.floor(Math.random()) + 1,
+            id: new Date().valueOf(),
             /*buat angka random dari 0-100, dan hasilnya
             ditambah 1 agar tidak menemukan angka 0*/
 
@@ -15,7 +15,7 @@ const TodoCreate = (props) => {
         }
 
         props.onCreateTodo(newTodo)
-        // console.log(newTodo);
+        console.log(newTodo);
     }
     return (
         <form className='todo-form' onSubmit={handleSubmit}>
