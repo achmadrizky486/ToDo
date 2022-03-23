@@ -1,6 +1,10 @@
 import './TodoCreate.css'
+import { useState } from 'react'
 
 const TodoCreate = (props) => {
+    const [getInputNewTodo, setInputNewTodo] = useState('')
+
+
     // ------cegah button Submit merefresh halaman---
     const handleSubmit = (event) => {
         event.preventDefault()
