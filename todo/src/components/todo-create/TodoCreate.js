@@ -21,9 +21,15 @@ const TodoCreate = (props) => {
         props.onCreateTodo(newTodo)
         console.log(newTodo);
     }
+
+    const handleInputNewTodo = (event) => {
+        setInputNewTodo(event.target.value)
+        console.log(getInputNewTodo)
+    }
+
     return (
         <form className='todo-form' onSubmit={handleSubmit}>
-            <input type="text" />
+            <input type="text" onChange={handleInputNewTodo} />
             <button type='submit'>Add</button>
         </form>
     )
