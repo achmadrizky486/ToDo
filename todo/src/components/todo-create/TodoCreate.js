@@ -15,11 +15,14 @@ const TodoCreate = (props) => {
             ditambah 1 agar tidak menemukan angka 0*/
 
             id: new Date().valueOf(), //nemu di https://stackoverflow.com/questions/8012002/create-a-unique-number-with-javascript-time
-            title: 'Learn'
+            title: getInputNewTodo
         }
 
         props.onCreateTodo(newTodo)
         console.log(newTodo);
+
+        setInputNewTodo('')
+
     }
 
     const handleInputNewTodo = (event) => {
@@ -29,7 +32,7 @@ const TodoCreate = (props) => {
 
     return (
         <form className='todo-form' onSubmit={handleSubmit}>
-            <input type="text" onChange={handleInputNewTodo} />
+            <input type="text" value={getInputNewTodo} onChange={handleInputNewTodo} />
             <button type='submit'>Add</button>
         </form>
     )
